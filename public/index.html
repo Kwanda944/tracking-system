@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tracking</title></head>
+<body>
+<h2>Track Parcel</h2>
+<input id="trackingInput" placeholder="Enter tracking number"/>
+<button onclick="track()">Track</button>
+<pre id="result"></pre>
+<script>
+const API = "http://localhost:3000";
+async function track(){
+ const t=document.getElementById('trackingInput').value;
+ const res=await fetch(API+'/track/'+t);
+ const data=await res.json();
+ document.getElementById('result').innerText=JSON.stringify(data,null,2);
+}
+</script>
+</body>
+</html>

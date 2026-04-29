@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin</title></head>
+<body>
+<h2>Create Shipment</h2>
+<input id="carrier" placeholder="Carrier"/>
+<input id="status" placeholder="Status"/>
+<input id="location" placeholder="Location"/>
+<input id="email" placeholder="Email"/>
+<button onclick="create()">Create</button>
+
+<h2>Update Shipment</h2>
+<input id="tracking" placeholder="Tracking"/>
+<input id="newStatus" placeholder="Status"/>
+<input id="newLocation" placeholder="Location"/>
+<button onclick="update()">Update</button>
+
+<script>
+const API="http://localhost:3000";
+async function create(){
+ const res=await fetch(API+'/create',{method:'POST',headers:{'Content-Type':'application/json'},
+ body:JSON.stringify({carrier:carrier.value,status:status.value,location:location.value,email:email.value})});
+ alert(JSON.stringify(await res.json()));
+}
+async function update(){
+ await fetch(API+'/update',{method:'POST',headers:{'Content-Type':'application/json'},
+ body:JSON.stringify({tracking:tracking.value,status:newStatus.value,location:newLocation.value})});
+ alert("Updated");
+}
+</script>
+</body>
+</html>
