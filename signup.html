@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richfield Connect - Sign Up</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Richfield Connect</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="signup.html" class="active">Sign Up</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="feed.html">Feed</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container signup-container">
+        <section class="signup-section">
+            <div class="signup-wrapper">
+                <!-- Sign-Up Form -->
+                <div class="form-container">
+                    <h1>Create Your Account</h1>
+                    <p class="form-subtitle">Join Richfield Connect and start engaging with your academic community</p>
+
+                    <form id="signupForm" class="signup-form">
+                        <!-- Full Name Field -->
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                            <span class="error-message" id="fullNameError"></span>
+                        </div>
+
+                        <!-- Student Number Field -->
+                        <div class="form-group">
+                            <label for="studentNumber">Student Number *</label>
+                            <input type="text" id="studentNumber" name="studentNumber" placeholder="Enter your student number" required>
+                            <span class="error-message" id="studentNumberError"></span>
+                        </div>
+
+                        <!-- Campus/DL Field -->
+                        <div class="form-group">
+                            <label for="campus">Campus / DL *</label>
+                            <select id="campus" name="campus" required>
+                                <option value="">Select your campus</option>
+                                <option value="Main Campus">Main Campus</option>
+                                <option value="Distance Learning">Distance Learning</option>
+                                <option value="Online">Online</option>
+                            </select>
+                            <span class="error-message" id="campusError"></span>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" placeholder="Minimum 8 characters" required>
+                            <span class="error-message" id="passwordError"></span>
+                        </div>
+
+                        <!-- Confirm Password Field -->
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password *</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
+                            <span class="error-message" id="confirmPasswordError"></span>
+                        </div>
+
+                        <!-- Interests Field -->
+                        <div class="form-group">
+                            <label for="interests">Interests (comma-separated) *</label>
+                            <input type="text" id="interests" name="interests" placeholder="e.g., Technology, Business, Sports" required>
+                            <span class="error-message" id="interestsError"></span>
+                            <div class="interests-preview" id="interestsPreview"></div>
+                        </div>
+
+                        <!-- Short Bio Field -->
+                        <div class="form-group">
+                            <label for="bio">Short Bio (max 200 characters) *</label>
+                            <textarea id="bio" name="bio" placeholder="Tell us about yourself" rows="4" maxlength="200" required></textarea>
+                            <span class="char-count"><span id="charCount">0</span>/200</span>
+                            <span class="error-message" id="bioError"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-submit">Create Account</button>
+                        <p class="form-footer">Already have an account? <a href="profile.html">View Profile</a></p>
+                    </form>
+                </div>
+
+                <!-- Live Profile Preview -->
+                <div class="profile-preview-container">
+                    <h2>Profile Preview</h2>
+                    <div class="profile-preview">
+                        <div class="preview-avatar">
+                            <span>👤</span>
+                        </div>
+                        <div class="preview-content">
+                            <h3 id="previewName">Your Name</h3>
+                            <p class="preview-label">Student Profile</p>
+                            <div class="preview-section">
+                                <p class="preview-bio" id="previewBio">Your bio will appear here...</p>
+                            </div>
+                            <div class="preview-section">
+                                <p class="preview-label">Interests:</p>
+                                <div class="preview-interests" id="previewInterests">
+                                    <span class="interest-tag">Add interests</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Richfield Education. All rights reserved.</p>
+            <p>Richfield Connect - Your Secure Academic Platform</p>
+        </div>
+    </footer>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- External JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>

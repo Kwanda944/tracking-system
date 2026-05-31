@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richfield Connect - Feed</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Richfield Connect</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="feed.html" class="active">Feed</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container feed-container">
+        <!-- Check if user is logged in -->
+        <div id="feedContent" class="feed-content" style="display: none;">
+            <!-- Create Post Section -->
+            <section class="create-post-section">
+                <div class="create-post-box">
+                    <div class="user-avatar-small">
+                        <span>👤</span>
+                    </div>
+                    <div class="post-input-area">
+                        <textarea id="postContent" class="post-textarea" placeholder="What's on your mind?" rows="3"></textarea>
+                        <button id="postBtn" class="btn btn-primary btn-small">Post</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feed Posts Section -->
+            <section class="feed-section">
+                <h2>Your Feed</h2>
+                <div id="feedPosts" class="posts-container">
+                    <!-- Posts will be dynamically inserted here -->
+                    <div class="empty-feed">
+                        <p>No posts yet. Be the first to share!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- No User Logged In Message -->
+        <div id="noFeedContent" class="no-feed-content">
+            <h2>Access Denied</h2>
+            <p>You need to sign up and create a profile to access the feed.</p>
+            <a href="signup.html" class="btn btn-primary btn-large">Sign Up Now</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Richfield Education. All rights reserved.</p>
+            <p>Richfield Connect - Your Secure Academic Platform</p>
+        </div>
+    </footer>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- External JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>
